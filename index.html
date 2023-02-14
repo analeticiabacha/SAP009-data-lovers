@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- para layout responsivo -->
+    
+    <title> Data Lovers - LoL </title>
+    <link rel="icon" type="image/png" href="https://img.ibxk.com.br/2019/07/26/26171514413327.jpg"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+      <!--Cabeçalho-->
+    <header class="cabecalho">
+      <div class="logo-header">
+        <img src="logo.png" alt="logo-lol" id="img-logo-lol">
+      </div>
+      <h2 id="txt-escolha-campeao">Escolha seu campeão</h2>
+      <nav class="navegadores" >
+        <button id="btn-mobile">
+          <span id="hamburguer"></span>
+        </button>
+        <div class="barra-pesquisa" id="menu">
+          <input type="text" class="campo-pesquisa-txt" id="txt-pesquisa" placeholder="Pesquisar por nome">
+          <a class="pesquisa-botao">
+            <svg  xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="#fff" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </a>
+        </div>
+        <a target="_blank" id="jogue-agora" href="https://www.leagueoflegends.com/pt-br/">Jogue agora!</a>
+      </nav>
+    </header>
+
+      <!--Menu lateral-->
+    <nav id="nav"> 
+      <div class="conteudo-lateral">
+        <aside class="barra-lateral" >
+          <div class="opcoes-barra-lateral" >
+            <a class="botoes" id="botao-sobre" href="sobre.html">Sobre</a>
+          </div>
+          <hr class="separador">
+          <div class="opcoes-barra-lateral">
+            <p id="txt-buscar">Buscar por:</p>
+          </div>
+          <div class="opcoes-barra-lateral">
+            <select class="lista-seletores" id="buscar-funcao">
+              <option disabled selected hidden> Função </option>
+              <option value="Assassin">Assassinos</option>
+              <option value="Marksman">Atiradores</option>
+              <option value="Fighter">Lutadores</option>
+              <option value="Mage">Magos</option>
+              <option value="Support">Suportes</option>
+              <option value="Tank">Tanques</option>
+              <option value="Melee">Corpo A Corpo</option>
+            </select>
+          </div>
+          <div class="opcoes-barra-lateral">
+            <select class="lista-seletores" id="buscar-dificuldade">
+              <option disabled selected hidden> Dificuldade </option>
+              <option value="1">Baixa</option>
+              <option value="2">Moderada</option>
+              <option value="3">Alta</option>
+            </select>
+          </div>
+          <hr class="separador">
+          <div class="opcoes-barra-lateral">
+            <select class="lista-seletores" id="ordenar">
+              <option disabled selected hidden> Ordenar por </option>
+              <option value="A-Z" id="A-Z">A-Z</option>
+              <option value="Z-A" id="Z-A">Z-A</option>
+            </select>
+          </div>
+          <div class="opcoes-barra-lateral">
+            <a class="botoes" id="botao-todos" href="">Mostrar todos</a>
+          </div>
+        </aside>
+        <!--Cards-->
+        <main class="conteudo-cards">
+          <section>
+            <p class="mensagem" id="mensagem-tela"></p><!--  resultado dos cálculos -->
+            <div class="container-card" id="info-cards"></div>
+          </section>
+
+        </main>
+      </div>
+    </nav>
+    
+    <!--Rodapé-->
+    <footer class="rodape">
+      <div class="contato">
+        <p>Projeto desenvolvido durante o Bootcamp da Laboratória pelas alunas:</p>
+      </div>
+        <div class="contato-aluna">
+          <p class="nome-aluna">Ana Leticia B. Prince </p>
+          <a href="https://github.com/analeticiabacha" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/analeticiabacha/" target="_blank">LinkedIn</a>
+        </div>
+        <div class="contato-aluna">
+          <p class="nome-aluna">Ana Paula Januário</p>
+          <a href="https://github.com/paulajanu" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/ana-paula-413517259/" target="_blank">LinkedIn</a>
+        </div> 
+    </footer>
+
+  <script src="main.js" type="module"></script>
+  </body>
+</html>

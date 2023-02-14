@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  background-image: url(https://i.pinimg.com/originals/6c/18/cf/6c18cfea1f788b7ffa8b56f6b5cfba97.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*Cabeçalho*/
+.cabecalho {
+  background-color: #4a357c;
+  opacity: 80%;
+  align-items: center;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo-header {
+  margin-left: 90px;
+}
+
+#img-logo-lol {
+  width: 150px;
+}
+
+#txt-escolha-campeao {
+  color: #fff;
+  font-size: 30px;
+  letter-spacing: 0.12cm;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.navegadores {
+  margin-right: 70px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-between;*/
+}
+
+.barra-pesquisa {
+  background: #150932;
+  height: 35px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 10px solid #150932;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.campo-pesquisa-txt {
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #fff;
+  font-family: 'Unbounded', cursive;
+  transition: 0.4s;
+  width: 0;
+}
+
+::-webkit-input-placeholder {
+  font-size: 14px;
+  font-family: 'Unbounded', cursive;
+  color: #aeaeae;
+}
+
+.pesquisa-botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.barra-pesquisa:hover > .campo-pesquisa-txt {
+  width: 200px;
+  padding-left: 5px;
+}
+
+
+#jogue-agora {
+  background-color: #150932;
+  padding: 0 10px;
+  border: 10px solid #150932;
+  border-radius: 20px;
+  margin-left: 40px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Unbounded', cursive;
+}
+/*Menu lateral*/
+.conteudo-lateral {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.barra-lateral {
+  width: 20%;
+  padding: 10px;
+}
+
+.opcoes-barra-lateral {
+  padding: 15px 0;
+}
+
+.botoes {
+  background-color: #150932;
+  opacity: 80%;
+  border-radius: 100px; 
+  border: 2px solid #180a39;
+  padding: 10px 15px;
+  margin-left: 80px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Unbounded', cursive;
+}
+
+#botao-sobre {
+  margin-left: 110px;
+}
+
+.separador {
+  margin: 10px 40px 0 40px;
+}
+
+#txt-buscar {
+  color: #fff;
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+}
+
+.lista-seletores{
+  opacity: 80%;
+  background: #150932;
+  border-radius: 100px;
+  border: 2px solid #150931;
+  padding: 10px 15px;
+  margin-left: 80px;
+  color:#fff;
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+}
+
+#ordenar {
+  margin-top: 10px;
+}
+
+/*Estilização da barra de rollagem*/
+::-webkit-scrollbar-track {
+  background-color: #12031b;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background: #bd68f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #391765;
+}
+
+/*Estilização da classe do <main> dos cards*/
+.container-card{
+    position: relative;
+    margin-top: 15px;
+    display: flex; 
+    flex-wrap: wrap;/*formato lista na vertical */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/*Estilização do background dos cards*/
+.cards{
+  width:400px;
+  height:290px;
+  margin: 10px;
+  display: inline-flex;
+  border-radius: 20px;
+  align-items: center;
+}
+
+/*Conteúdo dos cards*/
+.conteudo-cards {
+  width: 80%;
+}
+
+/*Estilização da imagem dos personagens nos cards*/
+.card-img{
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: -7%;
+    position:relative;
+    max-width:360px;
+    max-height:300px;
+    border-radius: 25px;
+    /*transition: transform 0.8s;*/
+    /*transform-style: preserve-3d;*/
+    box-shadow: 0 0 8px 0 rgba(227, 2, 252, 0.897);
+    cursor: pointer;
+    padding-left: -50px;
+    padding-right: -50px;
+    align-content: center; 
+    border-width: 45px;
+}
+
+/*Nome do campeão - parte da frente dos cards*/
+#front-cards-txt{ 
+  box-shadow: 5px 7px 20px rgba(224, 71, 147, 0.219); 
+  background: #251147;
+  border-radius: 10%;
+  color:rgb(221, 194, 235);
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  margin-left: 12%;
+  margin-right: 5%;
+  border-width: 45px;
+  box-shadow: 0 0 8px 0 rgba(102, 2, 252, 0.897);
+}
+
+.front-cards-infos{
+  position: absolute;
+  backface-visibility: hidden; 
+  text-align: center;
+}
+
+/*Estilização da parte de trás dos cars*/
+.back-cards-infos{
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+/*tirando os pontinho da lista*/
+li {
+  list-style-type: none;
+}
+
+ /*Animação de girar o card, flip*/
+.flipper{
+	width: 100%;
+	height: 100%;
+  transition: transform 0.8s;
+	transform-style: preserve-3d;
+  position: relative;
+}
+
+.flip-container {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-container:hover .flipper{
+	transform: rotateY(180deg);
+}
+
+/*Estilização da parte de trás do card*/
+.back-cards-txt{
+  color: rgb(211, 190, 239);
+  background-color: #200b5194;
+  padding: 30px;
+  border-radius: 60px;
+  margin-bottom: 35px;
+  font-size: 29px;
+}
+
+#nome-campeao{
+  color:#b79be8;
+  background-color: #130534;
+  font-size: 35px ;
+}
+
+/*Rodapé*/
+.rodape {
+  background-color: #371662;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 10px;
+  font-family: 'Unbounded', cursive;
+}
+
+.contato {
+  padding: 8px;
+}
+
+.contato-aluna a {
+  font-size: 0.35cm;
+  color: #fff;
+}
+.nome-aluna {
+  font-size: 15;
+  color: rgb(202, 165, 233);
+  padding: 8px 8px 0 8px;
+}
+
+/*Estilização da página sobre*/
+#conteudo-sobre {
+  background-color: #28184d;
+  color:#fff;
+  opacity: 90%;
+  margin-right: 100px;
+  margin-bottom: 60px;
+  border-radius: 20px;
+  padding: 30px;
+  border-color: rgba(139, 6, 254, 0.522);
+  border-style: solid;
+  border-width: 2px;
+  text-align: justify;
+  letter-spacing: 0.02cm;
+  word-spacing: 3px;
+  text-indent: 30px;
+  font-family: 'Unbounded', cursive;
+}
+
+#conteudo-sobre p {
+  margin: 10px;
+}
+ 
+
+/* conteudo responsivo */
+
+#btn-mobile{ /*menu hamburguer desaparecido quando a tela ta maior*/
+  display: none;
+  color: whitesmoke;
+}
+
+
+.mensagem {
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  font-size: 0.5cm;
+  text-align: center;
+  background-color: #4a357c;
+  opacity: 80%;
+  word-spacing: 3px;
+  letter-spacing: 0.02cm;
+  /*line-height: 5;*/
+}
+
+@media screen and (max-width: 800px){ /*tablets e telas menores/menu responsivo e imagem(logo)*/
+  .logo-header{
+    display: none;
+  }
+
+  #txt-escolha-campeao{
+    font-size: 0.65cm;
+    padding: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  #conteudo-sobre {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  #jogue-agora,
+  #txt-buscar,
+  .separador{
+    display: none;
+  }
+  /* .rodape{
+    display: none;
+  } */
+  .cabecalho{
+    display: block;
+    text-align: center;
+  }
+  .navegadores{
+    display:block;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+  }
+
+ .campo-pesquisa-txt{
+  background-color: #130534;
+ }
+ 
+ /*mexer daqui pra baixo */
+  
+  .barra-lateral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    position: absolute;
+    width: 100%;
+    top: 175px;
+    right: 0px;
+    transition: .6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+    background: #3e086e;
+}
+.navegadores{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+}
+.barra-lateral{
+  visibility: hidden;
+  overflow-y: hidden;
+}
+#nav.active .barra-lateral{
+  height: 50vh; /*ate onde o menu desce na página*/
+  visibility: visible;
+  opacity: 90%;
+}
+
+#btn-mobile{
+  display: flex;
+  padding: .5rem 1rem;
+  font-size: 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  gap: .5rem;
+}
+
+#hamburguer{
+  display: block;
+  border-top: 2px solid;
+  width: 20px;
+  color: whitesmoke;
+} 
+.cards{
+  display: flex;
+  justify-content: center;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+.mensagem {
+  display: flex;
+  justify-content: center;
+  margin-left: 110px;
+  margin-right: 50px;
+
+}
+
+#hamburguer::after , #hamburguer::before{
+  content: '' ;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  margin-top: 5px;
+  transition: .3s;
+  position: relative;
+}
+#nav.active #hamburguer{
+  border-top-color: transparent;        
+}
+#nav.active #hamburguer::before{
+  transform: rotate(135deg);
+}
+#nav.active #hamburguer::after{
+  transform: rotate(-135deg);
+  top: -7px;
+}
+  
+}
+  
