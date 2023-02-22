@@ -94,17 +94,17 @@ describe('dificuldadeCampeao', () => {
   });
 
   it('deve buscar por dificuldade baixa', () => {
-    const resultado = dificuldadeCampeao(testeCampeoes, 1);
+    const resultado = dificuldadeCampeao(testeCampeoes, '1');
     expect(resultado).toEqual([aatrox, leona]);
   })
 
   it('deve buscar por dificuldade média', () => {
-    const resultado = dificuldadeCampeao(testeCampeoes, 2);
+    const resultado = dificuldadeCampeao(testeCampeoes, '2');
     expect(resultado).toEqual([ahri]);
   })
 
   it('deve buscar por dificuldade alta', () => {
-    const resultado = dificuldadeCampeao(testeCampeoes, 3);
+    const resultado = dificuldadeCampeao(testeCampeoes, '3');
     expect(resultado).toEqual([zyra]);
   })
 });

@@ -31,11 +31,11 @@ export const funcaoDosCampeoes = (dados, tipo) => {
 export const dificuldadeCampeao = (dados, dificuldadeCampeao) => {
   const ordem = dados.sort((a,b) => (a.info.difficulty - b.info.difficulty));
   switch (dificuldadeCampeao) {
-  case 1:
+  case '1':
     return ordem.filter(campeao => campeao.info.difficulty <= 4);
-  case 2:
+  case '2':
     return ordem.filter(campeao => campeao.info.difficulty > 4 && campeao.info.difficulty <= 7);
-  case 3:
+  case '3':
     return ordem.filter(campeao => campeao.info.difficulty > 7);
   }
 }
