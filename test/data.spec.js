@@ -1,29 +1,37 @@
-import { filtroNomes, ordenarCampeoes, funcaoDosCampeoes, dificuldadeCampeao } from '../src/data.js';
+import { filtroNomes, ordenarCampeoes, funcaoDosCampeoes, dificuldadeCampeao, porcentagemCampeoes } from '../src/data.js';
 
 const aatrox = {
   name: "Aatrox",
   info: {
-    dificuldade: 4,
+    difficulty: 4,
   },
-  tags: ["Fighter" , "Tank"]
+  tags: ["Fighter", "Tank"]
 };
 const ahri =  {
   name: "Ahri",
   info: {
-    dificuldade: 5,
+    difficulty: 5,
   },
-  tags: ["Mage" , "Assassin"]
-
+  tags: ["Mage", "Assassin"]
 };
+
+const leona = {
+  name: "Leona",
+  info: {
+    difficulty: 4,
+  },
+  tags: ["Tank", "Support"]
+}
+
 const zyra =  {
   name: "Zyra",
   info: {
-    dificuldade: 7,
+    difficulty: 8,
   },
-  tags: ["Mage" , "Support"]
+  tags: ["Mage", "Support"]
 };
 
-const testeCampeoes = [aatrox, ahri, zyra];
+const testeCampeoes = [aatrox, ahri, leona, zyra];
 
 //testando se nosso objeto é um objeto mesmo
 describe("testeCampeoes", () => {
@@ -37,9 +45,10 @@ describe('filtroNomes' , () => {
   it('deve ser uma função', () => {
     expect(typeof filtroNomes).toBe("function");
   });
+
   it('deve retornar um array com os dados do nome do campeão que foi pesquisado', () => {
     const name = 'Aatrox';
-    expect(filtroNomes(testeCampeoes, name)).toEqual([aatrox])
+    expect(filtroNomes(testeCampeoes, name)).toEqual([aatrox]);
   })
 });
 
@@ -48,7 +57,7 @@ describe('ordenarCampeoes', () => {
 
   it('deve ser uma função', () => {
     expect(typeof ordenarCampeoes).toBe("function");
-  }); //ok
+  }); 
 
   it('deve ordenar de Z-A', () => {
     const resultado = ordenarCampeoes(testeCampeoes, "Z-A");
@@ -56,17 +65,16 @@ describe('ordenarCampeoes', () => {
   });
 
   it('deve ordenar de A-Z', () => {
-    const resultado = ordenarCampeoes(testeCampeoes, 'A-Z');
+    const resultado = ordenarCampeoes(testeCampeoes, "A-Z");
     expect(resultado[0].name).toBe("Aatrox");
   });
-
 });
 
 //testando função que verficiar a função dos campeões         
 describe('funcaoDosCampeoes', () => {
   it('deve ser uma função', () => {
     expect(typeof funcaoDosCampeoes).toBe("function");
-  }); //ok
+  }); 
 
   it('deve buscar por Lutadores ', () => {
     const resultado = funcaoDosCampeoes(testeCampeoes, "Fighter");
@@ -76,7 +84,6 @@ describe('funcaoDosCampeoes', () => {
   it('deve buscar por Assassinos ', () => {
     const resultado = funcaoDosCampeoes(testeCampeoes, "Assassin");
     expect(resultado).toEqual([ahri]);
-    
   });
 });
 
@@ -85,10 +92,33 @@ describe('dificuldadeCampeao', () => {
   it('deve ser uma função', () => {
     expect(typeof dificuldadeCampeao).toBe("function");
   });
+
+  it('deve buscar por dificuldade baixa', () => {
+    const resultado = dificuldadeCampeao(testeCampeoes, 1);
+    expect(resultado).toEqual([aatrox, leona]);
+  })
+
+  it('deve buscar por dificuldade média', () => {
+    const resultado = dificuldadeCampeao(testeCampeoes, 2);
+    expect(resultado).toEqual([ahri]);
+  })
+
+  it('deve buscar por dificuldade alta', () => {
+    const resultado = dificuldadeCampeao(testeCampeoes, 3);
+    expect(resultado).toEqual([zyra]);
+  })
 });
 
-// //testando o calculo de porcentagem
-// describe('porcentagemCampeoes', () => {
-//   it('xxxx', () => {
-//   });
-// });
+
+
+//testando o cálculo de porcentagem
+describe('porcentagemCampeoes', () => {
+  it('deve ser uma função', () => {
+    expect(typeof porcentagemCampeoes).toBe("function");
+  });
+
+  it('retorna a porcentagem da pesquisa do usuário', () => {
+    expect(porcentagemCampeoes(4,1)).toBe("25.00");
+  })
+});
+

@@ -1,10 +1,7 @@
 import {filtroNomes, ordenarCampeoes, funcaoDosCampeoes, dificuldadeCampeao, porcentagemCampeoes} from './data.js';
 import data from './data/lol/lol.js';
 
-//const lol = Object.keys(data.data); //tranformando objeto em um array
-//console.log(teste.); //deu certo: array de strings
-
-const dadosLol = Object.values(data);
+const dadosLol = Object.values(data.data);
 
 const root = document.getElementById("info-cards");
 
@@ -64,11 +61,10 @@ buscarPorFuncao.addEventListener("change", () => {
 
   //cálculo porcentagem campeoes e numero total naquela FUNÇÃO
   const mensagemTela = document.getElementById("mensagem-tela");
-  const porcentagem = porcentagemCampeoes(dadosLol, campeoesFuncao);
+  const porcentagem = porcentagemCampeoes(dadosLol.length, campeoesFuncao.length);
   mensagemTela.innerHTML = (`Campeões com essa função: ${campeoesFuncao.length}. Ou seja: ${porcentagem}% do total.`);
 
 });
-
 
 //filtro por dificuldade
 const buscarPorDificuldade = document.getElementById("buscar-dificuldade");
@@ -79,7 +75,7 @@ buscarPorDificuldade.addEventListener("change", event => {
 
   //cálculo porcentagem campeoes e numero total naquela DIFICULDADE
   const mensagemTela = document.getElementById("mensagem-tela");
-  const porcentagem = porcentagemCampeoes(dadosLol, filtroDificuldade);
+  const porcentagem = porcentagemCampeoes(dadosLol.length, filtroDificuldade.length);
   mensagemTela.innerHTML = (`Campeões com essa dificuldade: ${filtroDificuldade.length}. Ou seja: ${porcentagem}% do total.`);
 
 });
